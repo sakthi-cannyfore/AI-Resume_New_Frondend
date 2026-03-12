@@ -7,7 +7,7 @@ import {
   FiUser,
   FiChevronRight,
 } from "react-icons/fi";
-import UserDetail from "./UserDetail";
+import UserDetail from "../component/Userdetail";
 
 // const API = "http://127.0.0.1:8000";
 const API = "https://endorsingly-subuncinal-toya.ngrok-free.dev";
