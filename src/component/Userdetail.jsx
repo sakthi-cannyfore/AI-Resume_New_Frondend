@@ -50,76 +50,9 @@ export default function UserDetail({ user, onBack }) {
         Back to Candidates
       </button>
 
-      {/* <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-5">
-        <div className="h-28 relative">
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, white 1.5px, transparent 1.5px)",
-              backgroundSize: "24px 24px",
-            }}
-          />
-        </div>
 
-        <div className="px-6 pb-4">
-          <div className="flex sm:flex-row sm:items-end gap-3 -mt-18 mb-5">
-            {user.image_url ? (
-              <img
-                src={user.image_url}
-                alt={user.username}
-                className="w-50 h-60 rounded-2xl object-cover border-4 border-white shadow-md shrink-0"
-              />
-            ) : (
-              <div
-                className="w-24 h-24 rounded-2xl bg-indigo-100 text-indigo-600
-                              flex items-center justify-center text-4xl font-black
-                              border-4 border-white shadow-xl shrink-0"
-              >
-                {user.username?.[0]?.toUpperCase()}
-              </div>
-            )}
 
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between w-full gap-3 sm:pb-1">
-              <div className="text-start">
-                <h1 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight tracking-tight">
-                  {user.username}
-                </h1>
-                <p className="text-sm text-slate-500 ">{user.email}</p>
-              </div>
-              <span
-                className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700
-                               text-sm font-semibold px-4 py-2 rounded-xl border border-indigo-100 self-start sm:self-auto shrink-0"
-              >
-                {user.role}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {[
-              { icon: <FiHash />, label: `ID: ${user.user_id}` },
-              { icon: <FiCalendar />, label: `Joined ${joinedDate}` },
-              { icon: <FiPhone />, label: user.phone || "No phone" },
-              {
-                icon: <FiFolder />,
-                label: `${user.raw_resumes?.length ?? 0} resume${user.raw_resumes?.length !== 1 ? "s" : ""}`,
-              },
-            ].map(({ icon, label }) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-1.5 text-xs text-slate-500
-                               bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-full font-medium"
-              >
-                <span className="text-slate-400">{icon}</span>
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-            <div className=" rounded-2xl border bg-blue-100 border-slate-200 shadow-sm overflow-hidden mb-5">
+            <div className=" rounded-2xl border bg-blue-10 border-slate-200 shadow-sm overflow-hidden mb-5">
         <div className="h-20 relative">
           <div
             className="absolute inset-0 opacity-10"
@@ -139,7 +72,7 @@ export default function UserDetail({ user, onBack }) {
       <img
         src={user.image_url}
         alt={user.username}
-        className="w-40 h-50 rounded-2xl object-cover border-4 border-white shadow-md shrink-0"
+        className="w-55 h-70 rounded-2xl object-cover  shadow-md shrink-0"
       />
     ) : (
       <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-indigo-100 text-indigo-600
