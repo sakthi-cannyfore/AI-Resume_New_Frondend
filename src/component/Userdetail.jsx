@@ -17,7 +17,7 @@ import {
 export default function UserDetail({ user, onBack }) {
   if (!user) return null;
 
-  const latest = user.raw_resumes?.[1] ?? null;
+  const latest = user.raw_resumes?.[0] ?? null;
 
   const joinedDate = new Date(user.created_at).toLocaleDateString("en-IN", {
     day: "2-digit",
