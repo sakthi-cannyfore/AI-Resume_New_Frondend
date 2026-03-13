@@ -50,7 +50,7 @@ export default function UserDetail({ user, onBack }) {
         Back to Candidates
       </button>
 
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-5">
+      {/* <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-5">
         <div className="h-28 relative">
           <div
             className="absolute inset-0 opacity-10"
@@ -117,6 +117,78 @@ export default function UserDetail({ user, onBack }) {
             ))}
           </div>
         </div>
+      </div> */}
+
+            <div className=" rounded-2xl border bg-blue-100 border-slate-200 shadow-sm overflow-hidden mb-5">
+        <div className="h-20 relative">
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, white 1.5px, transparent 1.5px)",
+              backgroundSize: "24px 24px",
+            }}
+          />
+        </div>
+
+    <div className="px-4 sm:px-6 pb-4">
+  <div className="flex flex-col items-center sm:flex-row sm:items-end gap-3 -mt-10 sm:-mt-12 mb-5">
+    
+    {/* Avatar */}
+    {user.image_url ? (
+      <img
+        src={user.image_url}
+        alt={user.username}
+        className="w-40 h-50 rounded-2xl object-cover border-4 border-white shadow-md shrink-0"
+      />
+    ) : (
+      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-indigo-100 text-indigo-600
+                      flex items-center justify-center text-3xl sm:text-4xl font-black
+                      border-4 border-white shadow-xl shrink-0">
+        {user.username?.[0]?.toUpperCase()}
+      </div>
+    )}
+
+    {/* Name / Email / Role — centered column on mobile, row on sm+ */}
+    <div className="flex flex-col items-center sm:flex-row sm:items-end sm:justify-between w-full gap-2 sm:pb-1">
+      <div className="text-center sm:text-start">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 leading-tight tracking-tight">
+          {user.username}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-500">
+          {user.email}
+        </p>
+      </div>
+      <span className="inline-flex items-center bg-indigo-50 text-indigo-700
+                       text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2
+                       rounded-xl border border-indigo-100 shrink-0">
+        {user.role}
+      </span>
+    </div>
+  </div>
+
+  {/* Chips */}
+  <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+    {[
+      { icon: <FiHash />, label: `ID: ${user.user_id}` },
+      { icon: <FiCalendar />, label: `Joined ${joinedDate}` },
+      { icon: <FiPhone />, label: user.phone || "No phone" },
+      {
+        icon: <FiFolder />,
+        label: `${user.raw_resumes?.length ?? 0} resume${user.raw_resumes?.length !== 1 ? "s" : ""}`,
+      },
+    ].map(({ icon, label }) => (
+      <span
+        key={label}
+        className="inline-flex items-center gap-1.5 text-xs text-slate-500
+                   bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-full font-medium"
+      >
+        <span className="text-slate-400">{icon}</span>
+        {label}
+      </span>
+    ))}
+  </div>
+</div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
